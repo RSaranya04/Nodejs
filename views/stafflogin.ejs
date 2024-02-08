@@ -1,0 +1,78 @@
+<%- layout("layouts/navbar.ejs") %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Staff Login Form</title>
+    <link rel="stylesheet" type="text/css" href="/css/staff.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <script>
+    function Form()
+    {
+	var name =
+		document.forms["myForm"]["Name"].value;
+	var password =
+		document.forms["myForm"]["Password"].value;
+
+	if (name == "") {
+	  alert("Please enter your name.");
+		return false;
+	}
+
+	if (password == "") {
+		alert("Please enter your password");
+		return false;
+	}
+
+	if(password.length <6){
+		alert("Password should be atleast 6 character long");
+		return false;
+
+	}
+    }
+
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+
+
+    <link href="/nav"/>
+    <div class="staffcon">
+      <div class="img"></div>
+      <div class="login-content">
+        <form action="" name="myForm" onsubmit="return Form()">
+          <img src="/images/avatar.png"/>
+          <h2 class="title">Staff login!!</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <h5>Username</h5>
+              <input type="text" class="input" name="UserName" required/>
+            </div>
+          </div>
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input type="password" class="input" name="staffPassword" required />
+            </div>
+          </div>
+          <a href="#">Forgot Password?</a>
+          <input type="submit" class="btn" value="Login" name="staffsubmit"/>
+        </form>
+      </div>
+    </div>
+    <script src="/js/staff.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,66 @@
+<%- layout("layouts/navbar.ejs") %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student login</title>
+    <link rel="stylesheet" href="/css/student.css">
+<script>
+  function validateForm()
+  {
+	var name =
+		document.forms["myForm"]["Name"].value;
+  var yos =
+		document.forms["myForm"]["YearOfStudy"].value; 
+  var dob =
+		document.forms["myForm"]["DOB"].value;
+
+	if (name == "") {
+	  alert("Please enter your name.");
+		return false;
+	}
+
+	if (yos == "") {
+		alert("Please select your Year.");
+		return false;
+	}
+
+	if(dob == ""){
+		alert("Please enter your DOB");
+		return false;
+
+	}
+  }
+</script>
+</head>
+
+
+  <div class="form_content">
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3 style="color: azure;">STUDENT LOGIN</h3>
+            <p style="color: azure;">Please enter your credentials to login.</p>
+          </div>
+        </div>
+        <form class="login-form" onsubmit= "return validateForm()" name="myForm">
+          <input type="text" placeholder="User_id" name="StudentName" required/>
+          <input type="text" name="YearOfStudy" list="YearOfStudy" placeholder="YearOfStudy" required>
+          <datalist id="YearOfStudy">
+              <option value="Select"> 
+              <option value="I">
+              <option value="II">
+              <option value="III">
+              <option value="IV">
+          </datalist>
+          <input style="color:#b3b3b3" type="date" placeholder="DateOfBirth" name="DOB">
+          <button>Sign in</button>
+        </form>
+      </div>
+    </div>
+    </body>
+</html>
